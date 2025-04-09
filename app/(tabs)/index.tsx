@@ -1,74 +1,113 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Directions, ScrollView } from 'react-native-gesture-handler';
+import Carrossel from '../carrosel';
+import Promo from '../promo';
+
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ScrollView style={styles.main}>
+      <View style={styles.container}>
+
+        <TouchableOpacity style={styles.caixa}>
+          <Image src='https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/restaurant.png' style={
+            styles.imagem
+          }></Image>
+          <Text style={styles.titulo}>Restaurantes</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.caixa}>
+          <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' style={
+            styles.imagem}>
+
+          </Image>
+          <Text style={styles.titulo}>Mercados</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.caixa}>
+        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' style={
+            styles.imagem}>
+
+          </Image>
+          <Text style={styles.titulo}>Club Ifood</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.caixa}>
+        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Farmacia_4vdM.png?imwidth=256' style={
+            styles.imagem}>
+          </Image>
+          <Text style={styles.titulo}>Farmacias</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.container}>
+
+        <TouchableOpacity style={styles.caixa}>
+        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Pet_NsoQ.png?imwidth=256' style={
+            styles.imagem}>
+          </Image>
+          <Text style={styles.titulo}>Pet Shop</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.caixa}>
+        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' style={
+            styles.imagem}>
+          </Image>
+          <Text style={styles.titulo}>Express</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.caixa}>
+        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Bebidas_X9kU.png?imwidth=256' style={
+            styles.imagem}>
+          </Image>
+          <Text style={styles.titulo}>Bebidas</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.caixa}>
+        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/floreseperfume_LOhx.png?imwidth=256' style={
+            styles.imagem}>
+          </Image>
+          <Text style={styles.titulo}>Shopping</Text>
+        </TouchableOpacity>
+      </View>
+<Carrossel></Carrossel>
+<Promo></Promo>
+    </ScrollView>
+
+
+
+
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  main:{
+paddingTop: 100,
+  },
+  container: {
     flexDirection: 'row',
+    paddingLeft: 30,
+    paddingRight: 30,
     alignItems: 'center',
+    justifyContent: 'center',
     gap: 8,
+    height: 115,
+    backgroundColor: 'white',
+    
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+
+  imagem:{
+width:'70%',
+height:'50%'
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  caixa: {
+
+    backgroundColor: '#F5F5F5',
+    width: '25%',
+    borderRadius: 8,
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  titulo: {
+    color: 'black'
+  }
 });
