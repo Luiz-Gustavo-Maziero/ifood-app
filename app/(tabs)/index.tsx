@@ -7,6 +7,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { Directions, ScrollView } from 'react-native-gesture-handler';
 import Carrossel from '../carrosel';
 import Promo from '../promo';
+import Restaurantes from '../restaurantes-indicados';
 
 
 export default function HomeScreen() {
@@ -15,27 +16,27 @@ export default function HomeScreen() {
       <View style={styles.container}>
 
         <TouchableOpacity style={styles.caixa}>
-          <Image src='https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/restaurant.png' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/f_auto/webapp/landingV2/restaurant.png' }} style={
             styles.imagem
           }></Image>
           <Text style={styles.titulo}>Restaurantes</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.caixa}>
-          <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' }} style={
             styles.imagem}>
 
           </Image>
           <Text style={styles.titulo}>Mercados</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.caixa}>
-        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' }} style={
             styles.imagem}>
 
           </Image>
           <Text style={styles.titulo}>Club Ifood</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.caixa}>
-        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Farmacia_4vdM.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Farmacia_4vdM.png?imwidth=256' }} style={
             styles.imagem}>
           </Image>
           <Text style={styles.titulo}>Farmacias</Text>
@@ -44,32 +45,33 @@ export default function HomeScreen() {
       <View style={styles.container}>
 
         <TouchableOpacity style={styles.caixa}>
-        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Pet_NsoQ.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Pet_NsoQ.png?imwidth=256' }} style={
             styles.imagem}>
           </Image>
           <Text style={styles.titulo}>Pet Shop</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.caixa}>
-        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Mercados_SMx3.png?imwidth=256' }} style={
             styles.imagem}>
           </Image>
           <Text style={styles.titulo}>Express</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.caixa}>
-        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Bebidas_X9kU.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/Bebidas_X9kU.png?imwidth=256' }} style={
             styles.imagem}>
           </Image>
           <Text style={styles.titulo}>Bebidas</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.caixa}>
-        <Image src = 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/floreseperfume_LOhx.png?imwidth=256' style={
+          <Image source={{ uri: 'https://static.ifood-static.com.br/image/upload/t_low/discoveries/floreseperfume_LOhx.png?imwidth=256' }} style={
             styles.imagem}>
           </Image>
           <Text style={styles.titulo}>Shopping</Text>
         </TouchableOpacity>
       </View>
-<Carrossel></Carrossel>
-<Promo></Promo>
+      <Carrossel></Carrossel>
+      <Promo></Promo>
+      <Restaurantes></Restaurantes>
     </ScrollView>
 
 
@@ -79,8 +81,10 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  main:{
-paddingTop: 100,
+  main: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    backgroundColor:'white'
   },
   container: {
     flexDirection: 'row',
@@ -91,12 +95,12 @@ paddingTop: 100,
     gap: 8,
     height: 115,
     backgroundColor: 'white',
-    
+
   },
 
-  imagem:{
-width:'70%',
-height:'50%'
+  imagem: {
+    width: '70%',
+    height: '50%'
   },
   caixa: {
 

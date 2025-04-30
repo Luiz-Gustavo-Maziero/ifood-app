@@ -42,8 +42,7 @@ export default function CarrosselComDots() {
         scrollEventThrottle={16}
       />
 
-      {/* Dots de controle */}
-      <View style={styles.dotsContainer}>
+      <View style={styles.dots}>
         {imagens.map((_, index) => (
           <View
             key={index}
@@ -68,8 +67,9 @@ const styles = StyleSheet.create({
     width: width,
     height: 200,
     resizeMode: 'cover',
+    borderRadius: 30
   },
-  dotsContainer: {
+  dots: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 10,
