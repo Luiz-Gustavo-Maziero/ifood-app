@@ -1,10 +1,5 @@
 import { Image, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { Directions, ScrollView } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native';
 import Carrossel from '../carrosel';
 import Promo from '../promo';
 import Restaurantes from '../restaurantes-indicados';
@@ -12,7 +7,9 @@ import Restaurantes from '../restaurantes-indicados';
 
 export default function HomeScreen() {
   return (
-    <ScrollView style={styles.main}>
+    <ScrollView 
+    
+    style={styles.main}>
       <View style={styles.container}>
 
         <TouchableOpacity style={styles.caixa}>
